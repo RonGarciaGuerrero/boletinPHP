@@ -7,9 +7,10 @@
     <title>Ej4 Formulario</title>
 </head>
 <body>
+<h1>Conversor de euros a otra moneda</h1><br/>
     <form action="Ej5.php" method="post" >
         <label for="texto">Importe en Euros:</label><br/>
-        <input required type="text" id="campo1" name="campo1" placeholder="Inserte la cantidad">&nbsp;
+        <input required type="number" id="campo1" name="campo1" placeholder="Inserte la cantidad">&nbsp;
         <select id="moneda" name="moneda">
             <option value="usd">USD</option>
             <option value="gbp">GBP</option>

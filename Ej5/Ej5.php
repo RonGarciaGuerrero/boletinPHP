@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ej4</title>
+    <title>Ej5</title>
 </head>
 <body>
     <h1>Ampliar la página anterior para crear un conversor de euros a otra moneda que podrá seleccionarse de una lista (figura 2a).
@@ -23,7 +23,7 @@
         define("gbp", "0.927");
         define("jpy", "118.232");
         define("sfr", "1.515");
-        
+        //para cada moneda ejecuto la conversion e imprimo
         if ($moneda=='usd'){
             $result=$euros*usd;
             echo $euros.' euros son: '.$result.' USD';
