@@ -7,14 +7,7 @@
     <title>Ej5</title>
 </head>
 <body>
-    <h1>Ampliar la página anterior para crear un conversor de euros a otra moneda que podrá seleccionarse de una lista (figura 2a).
-    Tomar los siguientes valores para la conversión:
-    1€ = 1,325 dólares USA
-    1€ = 0,927 libras esterlinas
-    1€ = 118,232 yenes japoneses
-    1€ = 1,515 francos suizos
-    Deberá comprobarse que se ha introducido un valor, mostrándose un mensaje de aviso en caso contrario
-    </h1><br/>
+    <h1>Conversor de euros a otra moneda</h1><br/>
     <?php
         $euros =$_POST['campo1'];
         $moneda = $_POST['moneda'];
