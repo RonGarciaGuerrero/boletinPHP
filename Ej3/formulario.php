@@ -9,7 +9,8 @@
 <body>
     <form action="Ej3.php" method="post" >
         <!-- hago que el texto introducido sea en mayusculas -->
-        <input style="text-transform: uppercase;" required type="text" id="campo1" name="campo1" placeholder="Inserta el nombre completo del fichero, con su extension">
+        <input style="text-transform: uppercase;" required type="text" id="campo1" name="campo1" pattern = "[a-zA-Z0-9]*\.?[a-zA-Z0-9]*" placeholder="Inserta el nombre completo del fichero, con su extension"> 
+        <!-- uso un patron para asegurarme que no se usen dos puntos en la extension u otros formatos -->
         <input type="submit">
     </form>
 </body>
