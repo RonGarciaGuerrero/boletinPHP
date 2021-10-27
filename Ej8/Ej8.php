@@ -1,7 +1,7 @@
 <?php
 // Create connection
 $conn = new mysqli("localhost","root","","directorio");
-
+//mysqli_connect("localhost","root","","directorio")
 // Check connection
 if ($conn->connect_error) {
   die("Conexion fallida: ".$conn->connect_error);
@@ -32,6 +32,9 @@ $poblacion = $_POST['poblacion'];
 $cp = $_POST['cp'];
 $telefono = $_POST['telefono'];
 $email = $_POST['email'];
+
+//$sql = "insert into clientes ..."
+//if (mysqli_query ($conn, $sql)){guardado correctamente}else{no...}
 
 $stmt->execute();
 
