@@ -1,22 +1,42 @@
 <?php
-$con = mysqli_connect("localhost","root","","directorio");
+// Create connection
+$conn = new mysqli("localhost","root","","directorio");
 
 // Check connection
-if (mysqli_connect_errno()) {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  exit();
+if ($conn->connect_error) {
+  die("Conexion fallida: ".$conn->connect_error);
+  // echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  // exit();
 }else{
     echo "conectado a la BBDD";
 }
-//para generar el id he puesto en mysql admin al campo is le he dado a cambiar y he seleccionado el check de auto incremento AI
+//echo $conn;
+//para generar el id he puesto en mysql admin al campo is le he dado a cambiar y he seleccionado el check de auto incremento AI, en el script de sql le he puesto el auto incremento despues del tipo
 
+// prepare and bind
+$stmt = mysqli_prepare( $conn,"INSERT INTO DIRECTORIO (NOMBRE, APELLIDOS, DIRECCION, POBLACION,CODIGOPOSTAL, TELEFONO, EMAIL) VALUES (?, ?, ?, ?, ?, ?, ?)");
+echo mysqli_stmt_error($stmt);
+//https://www.php.net/manual/es/mysqli-stmt.bind-param.php
+// i	la variable es de tipo entero
+// d	la variable es de tipo double
+// s	la variable es de tipo string
+// b	la variable es un blob y se envía en paquetes
 
-$query = "INSERT INTO myCity VALUES (NULL, 'Stuttgart', 'DEU', 'Stuttgart', 617000)";
-mysqli_query($link, $query);
+$stmt->bind_param("sssssis", $nombre, $apellidos, $direccion, $poblacion, $cp, $telefono, $email);
 
-printf ("Nuevo registro con el id %d.\n", mysqli_insert_id($link));
+// set parameters and execute
+$nombre = $_POST['nombre'];
+$apellidos = $_POST['apellidos'];
+$direccion = $_POST['direccion'];
+$poblacion = $_POST['poblacion'];
+$cp = $_POST['cp'];
+$telefono = $_POST['telefono'];
+$email = $_POST['email'];
 
+$stmt->execute();
 
-/* close connection */
-mysqli_close($link);
+echo "New records created successfully";
+
+$stmt->close();
+$conn->close();
 ?>

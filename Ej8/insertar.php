@@ -10,19 +10,19 @@
     <h1>Insertar en la BBDD Clientes:</h1><br/>
     <form action="Ej8.php" method="post">
         <label for="nombre">Nombre</label><br/>
-        <input style="text-transform: uppercase;" required type="text"><br/>
+        <input style="text-transform: uppercase;" required type="text" name="nombre"><br/>
         <label for="apellidos">Apellidos</label><br/>
-        <input style="text-transform: uppercase;" required type="text"><br/>
+        <input style="text-transform: uppercase;" required type="text" name="apellidos"><br/>
         <label for="direccion">Dirección</label><br/>
-        <input style="text-transform: uppercase;" required type="text"><br/>
+        <input style="text-transform: uppercase;" required type="text" name="direccion"><br/>
         <label for="poblacion">Población</label><br/>
-        <input style="text-transform: uppercase;" required type="text"><br/>
+        <input style="text-transform: uppercase;" required type="text" name="poblacion"><br/>
         <label for="cp">Código Postal</label><br/>
-        <input style="text-transform: uppercase;" required type="text"><br/>
+        <input style="text-transform: uppercase;" required type="text" name="cp"><br/>
         <label for="telefono">Telefono</label><br/>
-        <input required type="number"><br/>
+        <input required type="number" name="telefono"><br/>
         <label for="email">Email</label><br/>
-        <input required type="text" ><br/><br/>
+        <input required type="text" name="email"><br/><br/>
         <input type="submit">
     </form>
 </body>
