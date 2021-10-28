@@ -8,16 +8,16 @@
 </head>
 <body>
     <h1>Buscar en la BBDD Clientes</h1><br/>
-    <h3>Opción 1. Buscar por el primer Apellido</h3>
-    <form action="Ej8.php" method="post">
-        <label for="nombre">Primer Apellido</label><br/>
-        <input style="text-transform: uppercase;" required type="text"><br/><br/>
+    <h3>Opción 1. Buscar por el primer Apellido:</h3>
+    <form action="Ej8buscar.php" method="GET">
+        <label for="apellido">Primer Apellido</label><br/>
+        <input style="text-transform: uppercase;" required type="text" name="apellidos"><br/><br/>
         <input type="submit">
     </form>
-    <h3>Opción 2. Buscar por el número de telefono</h3>
-    <form action="Ej8.php" method="post">
-        <label for="nombre">Primer Apellido</label><br/>
-        <input style="text-transform: uppercase;" required type="text"><br/><br/>
+    <h3>Opción 2. Buscar por el número de teléfono:</h3>
+    <form action="Ej8buscar.php" method="GET">
+        <label for="telefono">Teléfono</label><br/>
+        <input style="text-transform: uppercase;" required type="number" name="telefono"><br/><br/>
         <input type="submit">
     </form>
     <h4>Solo se puede buscar con una opción a la vez.</h4>
