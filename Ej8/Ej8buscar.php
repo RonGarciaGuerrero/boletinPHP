@@ -12,35 +12,37 @@ if ($conn->connect_error) {
 
 // asignacion de variables
 
-$apellidos = $_GET['apellidos'];
-$telefono = $_GET['telefono'];
+$apellidos = array_key_exists('apellidos', $_GET) ? $_GET["apellidos"] : NULL;
+$telefono = array_key_exists('telefono', $_GET) ? $_GET["telefono"] : NULL;
+//"operador ternario" condicion ? valor_si_condicion_cierta : valor_si_condicion_falsa
+//si viene la clave 'telefono' en el array llamado $_GET, entonces mete ese valor en $telefono; si no viene, entonces pon NULL"
 $result = NULL;
 
-if (array_key_exists("blablabla", $apellidos)) { 
-  if ($result = $mysqli_query ($conn,"SELECT * FROM CLIENTES WHERE INSTR(UPPER(APELLIDOS), '$apellidos') = 1)"){//lo intenté con ? pero no logré que funcionara
-    echo "Los resultados de la busqueda son: ".mysqli_num_rows($result);
-    //todos los resultados
-    //mysqli_free_result($result);
-  }else{
-    echo "No hay resultados";
-  }
-} else if (!is_null($apellidos)){
-  consulta por blablabla2 
-} else { 
-  echo "error"; 
+if (!is_null($apellidos)){
+  $result = mysqli_query ($conn,"SELECT * FROM CLIENTES WHERE INSTR(UPPER(APELLIDOS), '$apellidos') = 1");//lo intenté con ? pero no logré que funcionara;
+} else if (!is_null($telefono)) {
+  $result = mysqli_query ($conn,"SELECT * FROM CLIENTES WHERE TELEFONO = '$telefono'");
 }
 
-// $result = NULL;
-// if (buscando por apellido){
-//     result = consulta sql por apellido...;
-// } else if (buscando por telefono) {
-//     result = consulta sql por telefono...;
-// }
+if (!is_null($result)){
+  printf("La selección devolvió %d filas.\n", mysqli_num_rows($result));
+  echo'<br/>';
+  // $cont=mysqli_num_rows($result);
+  // for($i=0;$i<=$cont;$i++) {
+  //   echo $result[$i], '<br/>';
+  // }
+  while($row = mysqli_fetch_array($result))
+     {
+        print_r($row);
+        echo'<br/>';
+        echo'<br/>';
+     }
 
-// if (!is_null($result)){
-//     pinto resultados;
-// } else {
-//     muestro error;
-// }
+  /* liberar el conjunto de resultados */
+  mysqli_free_result($result);
+} else {
+  echo 'Error';
+}
+
 mysqli_close($conn);
 ?>
