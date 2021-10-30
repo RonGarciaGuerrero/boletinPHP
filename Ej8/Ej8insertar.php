@@ -1,3 +1,4 @@
+<!-- Autor: Ronald Garcia Guerrero -->
 <?php
 // Conección
 $conn = mysqli_connect("localhost","root","","directorio");
@@ -9,19 +10,7 @@ if ($conn->connect_error) {
 }else{
     echo "conectado a la BBDD"."<br/>";
 }
-//echo $conn;
 //para generar el id he puesto en mysql admin al campo is le he dado a cambiar y he seleccionado el check de auto incremento AI, en el script de sql le he puesto el auto incremento despues del tipo
-
-// prepare and bind
-// $stmt = mysqli_prepare( $conn,"INSERT INTO DIRECTORIO (NOMBRE, APELLIDOS, DIRECCION, POBLACION,CODIGOPOSTAL, TELEFONO, EMAIL) VALUES (?, ?, ?, ?, ?, ?, ?)");
-// echo mysqli_stmt_error($stmt);
-//https://www.php.net/manual/es/mysqli-stmt.bind-param.php
-// i	la variable es de tipo entero
-// d	la variable es de tipo double
-// s	la variable es de tipo string
-// b	la variable es un blob y se envía en paquetes
-
-// $stmt->bind_param("sssssis", $nombre, $apellidos, $direccion, $poblacion, $cp, $telefono, $email);
 
 // set parameters and execute
 $nombre = $_POST['nombre'];
@@ -40,7 +29,5 @@ if (mysqli_query ($conn, $sql)){
   echo "Error guardando: " . $sql . "<br>" . mysqli_error($conn);
 }
 mysqli_close($conn);
-//$stmt->execute();
-//$stmt->close();
-//$conn->close();
+
 ?>

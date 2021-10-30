@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 3</title>
+    <!-- Autor: Ronald Garcia Guerrero -->
 </head>
 <body>
     <h1>Se pretende obtener información de un fichero a partir de su nombre.

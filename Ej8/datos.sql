@@ -1,3 +1,4 @@
+-- Autor: Ronald Garcia Guerrero 
 INSERT INTO CLIENTES (
 	NOMBRE,
     APELLIDOS,

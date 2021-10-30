@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ej5</title>
+    <!-- Autor: Ronald Garcia Guerrero -->
 </head>
 <body>
     <h1>Conversor de euros a otra moneda</h1><br/>
+    
     <?php
         $euros =$_POST['campo1'];
         $moneda = $_POST['moneda'];
