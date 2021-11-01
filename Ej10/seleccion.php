@@ -1,3 +1,4 @@
+<!-- Autor: Ronald Garcia Guerrero -->
 <?php
 $selectOption = $_POST['bits'];
 if($selectOption=='1'){
