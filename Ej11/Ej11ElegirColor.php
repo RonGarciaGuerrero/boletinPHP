@@ -46,9 +46,9 @@
     <option value="blue">Azul</option>
     <option value="green">Verde</option>
     <option value="auto">Ninguno</option>
-  </select>
-  <br><br>
-  <input type="submit" value="Aplicar cambio">
+    </select>
+    <br><br>
+    <input type="submit" value="Aplicar cambio">
     </form>
     <a href="./comprobarCookie.php">Comprobar cookie</a>
 </body>
